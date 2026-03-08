@@ -1,6 +1,7 @@
 public class OOPSBannerApp {
 
-    static void printO(int row) {
+    class BannerPrinter {
+
         String[] O = {
             " *** ",
             "*   *",
@@ -8,10 +9,7 @@ public class OOPSBannerApp {
             "*   *",
             " *** "
         };
-        System.out.print(O[row] + "  ");
-    }
 
-    static void printP(int row) {
         String[] P = {
             "**** ",
             "*   *",
@@ -19,10 +17,7 @@ public class OOPSBannerApp {
             "*    ",
             "*    "
         };
-        System.out.print(P[row] + "  ");
-    }
 
-    static void printS(int row) {
         String[] S = {
             " ****",
             "*    ",
@@ -30,20 +25,24 @@ public class OOPSBannerApp {
             "    *",
             "**** "
         };
-        System.out.print(S[row] + "  ");
+
+        void printBanner() {
+
+            for (int i = 0; i < 5; i++) {
+                System.out.println(O[i] + "  " + O[i] + "  " + P[i] + "  " + S[i]);
+            }
+
+        }
+
     }
 
     public static void main(String[] args) {
 
-        for (int i = 0; i < 5; i++) {
+        OOPSBannerApp app = new OOPSBannerApp();
+        BannerPrinter printer = app.new BannerPrinter();
 
-            printO(i);
-            printO(i);
-            printP(i);
-            printS(i);
-
-            System.out.println();
-        }
+        printer.printBanner();
 
     }
+
 }
